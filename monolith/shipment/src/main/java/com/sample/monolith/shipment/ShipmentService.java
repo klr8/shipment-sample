@@ -30,7 +30,7 @@ public class ShipmentService {
     public Shipment shipPackage(String customerId, String packageId) throws ShipmentException {
         Optional<PackageInfo> packageInfo = warehouseService.findPackage(packageId);
 
-        if (!packageInfo.isPresent()) {
+        if (packageInfo.isEmpty()) {
             throw new ShipmentException("Cannot find package " + packageId);
         }
 
@@ -40,7 +40,7 @@ public class ShipmentService {
 
         Optional<CustomerInfo> customerInfo = customerService.findCustomer(customerId);
 
-        if (!customerInfo.isPresent()) {
+        if (customerInfo.isEmpty()) {
             throw new ShipmentException("Cannot find customer " + customerId);
         }
 

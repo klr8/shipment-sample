@@ -24,7 +24,7 @@ public class ShipmentService {
     public Shipment shipPackage(String customerId, String packageId) throws ShipmentException {
         Optional<PackageInfoDto> packageInfo = findPackage(packageId);
 
-        if (!packageInfo.isPresent()) {
+        if (packageInfo.isEmpty()) {
             throw new ShipmentException("Cannot find package " + packageId);
         }
 
@@ -34,7 +34,7 @@ public class ShipmentService {
 
         Optional<CustomerInfoDto> customerInfo = findCustomer(customerId);
 
-        if (!customerInfo.isPresent()) {
+        if (customerInfo.isEmpty()) {
             throw new ShipmentException("Cannot find customer " + customerId);
         }
 

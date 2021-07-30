@@ -29,5 +29,4 @@ public class PackageInfo {
     public String toString() {
         return packageId;
     }
-    
 }

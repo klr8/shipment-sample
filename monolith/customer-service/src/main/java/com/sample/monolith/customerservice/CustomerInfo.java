@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class CustomerInfo {
 
-    private String customerId;
-    private String name;
-    private String address;
-    private int grade;
+    private final String customerId;
+    private final String name;
+    private final String address;
+    private final int grade;
 
     public CustomerInfo(String customerId, String name, String address, int grade) {
         this.customerId = Objects.requireNonNull(customerId);

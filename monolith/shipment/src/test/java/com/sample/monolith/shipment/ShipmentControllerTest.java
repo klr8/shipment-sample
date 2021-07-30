@@ -7,8 +7,6 @@ import com.sample.monolith.warehouse.WarehouseService;
 import com.sample.monolith.warehouse.PackageInfo;
 import com.sample.monolith.customerservice.CustomerService;
 import com.sample.monolith.customerservice.CustomerInfo;
-import com.sample.monolith.shipment.ShipmentController.ShipmentRequestDto;
-import com.sample.monolith.shipment.ShipmentController.ShipmentTrackerDto;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
