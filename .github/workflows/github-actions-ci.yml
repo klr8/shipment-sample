@@ -14,3 +14,15 @@ jobs:
         run: |
           cd monolith
           mvn -B -ntp clean verify
+      - name: Build microservice
+        run: |
+          cd microservice
+          cd warehouse
+          mvn -B -ntp clean verify
+          cd ..
+          cd customer-service
+          mvn -B -ntp clean verify
+          cd ..
+          cd shipment
+          mvn -B -ntp clean verify
+          cd ..
