@@ -1,0 +1,11 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Run-CI-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
