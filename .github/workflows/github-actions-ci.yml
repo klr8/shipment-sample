@@ -4,8 +4,13 @@ jobs:
   Run-CI-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - name: List files in the repository
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          cache: 'maven'
+      - name: Build monolith
         run: |
-          ls ${{ github.workspace }}
+          cd monolith
+          mvn -B -ntp clean verify
